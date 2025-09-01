@@ -1,0 +1,203 @@
+/* ====== Base ====== */
+.gold-text {
+  background-image: linear-gradient(90deg, #E9D8A6, #C8A96A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.reveal { opacity: 0; transform: translateY(18px); }
+
+/* Paneelachtergrond (rest van de site, niet-hero) */
+.bg-panel {
+  background:
+    radial-gradient(800px 400px at 10% 20%, rgba(255,255,255,0.04), transparent 60%),
+    linear-gradient(180deg, #0f1418 0%, #10161b 100%);
+}
+
+/* Hero background met overlay + subtiele diepte */
+.hero-bg {
+  position: relative;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(200,169,106,0.12), transparent 60%),
+    radial-gradient(800px 400px at 10% 20%, rgba(255,255,255,0.05), transparent 60%),
+    linear-gradient(180deg, #0b0f12 0%, #0f1418 100%);
+}
+.hero-bg::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(60% 40% at 30% 30%, rgba(0,0,0,.35), transparent 60%);
+}
+
+/* Kleine goud-dot */
+.dot-gold { width:6px; height:6px; border-radius:9999px; background-image: linear-gradient(90deg,#E9D8A6,#C8A96A); }
+
+/* Portrait */
+.portrait-wrap { border-radius: 28px; overflow: hidden; }
+.portrait-img { display:block; filter: contrast(1.02) saturate(1.04); }
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* Sticky bottom CTA (mobiel) */
+@media (max-width: 640px){
+  .sticky-cta{
+    position: fixed; inset-inline: 12px; bottom: 12px; z-index: 60;
+    display:flex; gap:8px; padding:8px; background:rgba(11,15,18,.6);
+    border:1px solid rgba(255,255,255,.08); border-radius:16px; backdrop-filter: blur(10px);
+  }
+  .sticky-cta a{ flex:1; text-align:center; border-radius:12px; padding:.75rem 1rem; }
+}
+
+/* ====== Prijzen accordion ====== */
+.price-acc {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.price-acc + .price-acc { margin-top: 12px; }
+
+.price-acc > summary {
+  list-style: none;
+  cursor: pointer;
+  display:flex; align-items:center; justify-content: space-between;
+  padding: 16px 18px;
+  font-weight: 600;
+  background:
+    linear-gradient(90deg, rgba(232,211,160,0.06), transparent 40%),
+    rgba(255,255,255,0.01);
+}
+.price-acc[open] > summary { background:
+  linear-gradient(90deg, rgba(232,211,160,0.10), transparent 40%),
+  rgba(255,255,255,0.02);
+}
+.price-acc .acc-icon { transition: transform .25s ease; }
+.price-acc[open] .acc-icon { transform: rotate(180deg); }
+
+.price-acc > ul { padding: 10px 14px 14px; }
+.price-acc li {
+  display:flex; justify-content: space-between; align-items:center;
+  padding: 10px 8px; border-radius: 12px;
+  transition: background .2s ease;
+}
+.price-acc li:hover { background: rgba(255,255,255,0.04); }
+.price-acc .price {
+  color: #fff;
+  font-variation-settings: "wght" 550;
+}
+
+/* ====== Portfolio ====== */
+#portfolioGrid .portfolio-item { position: relative; }
+#portfolioGrid .portfolio-item::after{
+  content:'';
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.18));
+  opacity: 0; transition: opacity .3s ease;
+}
+#portfolioGrid .portfolio-item:hover::after{ opacity: 1; }
+
+/* ====== Icons ====== */
+i[data-lucide] { stroke-width: 1.6; }
+
+/* ====== Accessibility tweaks ====== */
+@media (prefers-reduced-motion: reduce){
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+body {
+  background: url('../img/bg.jpg') no-repeat center top fixed;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ====== Kalender ====== */
+.calendar { user-select: none; }
+.cal-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08);
+}
+.cal-title{ display:flex; align-items:center; font-weight:600; }
+.cal-nav{
+  width:34px; height:34px; border-radius:10px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+.cal-nav:hover{ background: rgba(255,255,255,.10); }
+.cal-grid{
+  display:grid; grid-template-columns: repeat(7, 1fr);
+  gap: 6px; padding: 12px;
+}
+.cal-weekdays{ padding-bottom: 6px; }
+.cal-weekdays > div{
+  text-align:center; font-size:12px; color: rgba(255,255,255,.6);
+}
+.cal-day{
+  aspect-ratio: 1 / 1;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:12px;
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  font-weight:500; cursor:pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.cal-day:hover{ background: rgba(255,255,255,.06); transform: translateY(-1px); }
+.cal-day.is-muted{ opacity:.35; cursor:default; }
+.cal-day.is-today{ outline: 2px solid rgba(232,211,160,.35); }
+.cal-day.is-selected{
+  background: linear-gradient(90deg, #E9D8A6, #C8A96A);
+  color:#0b0f12; border-color: transparent;
+}
+
+/* Re-usable card (als je die nog niet had) */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+}
+/* ====== ORGÆNIC product marquee ====== */
+.product-marquee{
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  background: rgba(255,255,255,.02);
+  /* zachte rand-fades links/rechts */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.product-marquee .marquee-track{
+  display: inline-flex;
+  align-items: center;
+  gap: 48px;
+  padding: 18px 0;
+  /* de truc: breedte zo groot als nodig en dan animeren */
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+.product-marquee img{
+  height: clamp(180px, 28vw, 360px);
+  width: auto;
+  display: block;
+  filter: contrast(1.02) saturate(1.02);
+  will-change: transform;
+}
+.product-marquee:hover .marquee-track{
+  animation-play-state: paused;
+}
+
+/* Loop-animatie */
+@keyframes marqueeScroll{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* omdat we de image 2x plaatsen */
+}
+
+/* Reduced motion: geen animatie, handmatig scrollen mogelijk */
+@media (prefers-reduced-motion: reduce){
+  .product-marquee{ overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .product-marquee .marquee-track{ animation: none; gap: 24px; padding: 12px; }
+}

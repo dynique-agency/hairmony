@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hairmony by Stacy — ORGÆNIC Lifestyle</title>
+  <meta name="description" content="Hairmony by Stacy — ORGÆNIC Lifestyle Friseur in Ostbelgien. Dark, clean & luxurious one-page site. Termine nach Vereinbarung." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coal: '#0b0f12',
+            coal2: '#0f1418',
+            coal3: '#12161b',
+            gold: '#C8A96A',
+            gold2: '#E0C285'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.35)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Icons -->
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-coal text-white font-sans selection:bg-gold/20 selection:text-white">
+
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-coal/70 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-gold2 to-gold shadow-soft"></div>
+        <div class="leading-tight">
+          <div class="font-serif text-lg tracking-wide">Hairmony <span class="bg-gradient-to-r from-gold2 to-gold bg-clip-text text-transparent">by Stacy</span></div>
+          <div class="text-[11px] uppercase tracking-[.18em] text-white/60">ORGÆNIC Lifestyle</div>
+        </div>
+      </a>
+      <nav class="hidden sm:flex items-center gap-5 text-sm text-white/80">
+        <a href="#services" class="hover:text-white" data-i18n="nav.services">Leistungen</a>
+        <a href="#portfolio" class="hover:text-white" data-i18n="nav.portfolio">Inspiration</a>
+        <a href="#about" class="hover:text-white" data-i18n="nav.about">Philosophie</a>
+        <a href="#reviews" class="hover:text-white" data-i18n="nav.reviews">Stimmen</a>
+        <a href="#contact" class="hover:text-white" data-i18n="nav.contact">Kontakt</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <select id="langSwitch" class="bg-coal2 text-white/90 border border-white/10 rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-gold/40">
+          <option value="de">DE</option>
+          <option value="nl">NL</option>
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+        </select>
+        <a href="#book" class="hidden sm:inline-block bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl px-4 py-2 text-xs" data-i18n="nav.book">Anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative pt-28 pb-20 sm:pb-28 overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="assets/img/hero-desktop.jpg" alt="Hero Background" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-black/60"></div> <!-- leesbaarheids-overlay -->
+    </div>
+
+    <!-- Content -->
+    <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <!-- Text -->
+      <div class="max-w-xl">
+        <h1 class="reveal font-serif text-4xl sm:text-5xl leading-tight">
+          <span class="bg-gradient-to-r from-gold2 to-gold bg-clip-text text-transparent" data-i18n="hero.title">
+            Haar, das atmet, fällt und strahlt.
+          </span>
+        </h1>
+        <p class="reveal mt-4 text-white/80" data-i18n="hero.subtitle">
+          Dein persönlicher ORGÆNIC Lifestyle Termin – Ruhe, Schönheit und Handwerk in perfekter Harmonie.
+        </p>
+        <div class="reveal mt-6 flex items-center gap-3">
+          <a href="#book" class="cta-btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-gold text-coal font-medium hover:brightness-110 transition" data-i18n="hero.cta_primary">Unverbindlich anfragen</a>
+          <a href="https://wa.me/32479530471" target="_blank" class="inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white/5 border border-white/10 hover:bg-white/10" data-i18n="hero.cta_secondary">
+            <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>WhatsApp
+          </a>
+        </div>
+        <dl class="reveal mt-8 grid grid-cols-2 gap-4 text-xs text-white/70">
+          <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.founded_label">Gründung</dt><dd>01/01/2023</dd></div>
+          <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.training_label">Ausbildung</dt><dd data-i18n="facts.training_value">Abgeschlossen 2022</dd></div>
+          <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.products_label">Produkte</dt><dd data-i18n="facts.products_value">ORGÆNIC Lifestyle – Pflege & Verkauf</dd></div>
+          <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.hours_label">Öffnungszeiten</dt><dd data-i18n="facts.hours_value">Nur nach Termin</dd></div>
+        </dl>
+      </div>
+
+      <!-- Portrait -->
+      <div class="reveal relative md:justify-self-end">
+        <div class="portrait-wrap relative w-[85vw] max-w-[520px] mx-auto md:mx-0">
+          <img src="assets/img/stacy-portrait.png" alt="Stacy — Hairmony" class="portrait-img w-full h-auto will-change-transform" loading="eager">
+          <div class="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/10 shadow-[0_30px_80px_rgba(200,169,106,.20)]"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP band -->
+  <section class="bg-panel border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-4 py-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-white/80 text-sm">
+      <div class="reveal flex items-center gap-3"><div class="dot-gold"></div><span data-i18n="usps.u1">Spezialisiert auf ORGÆNIC Lifestyle</span></div>
+      <div class="reveal flex items-center gap-3"><div class="dot-gold"></div><span data-i18n="usps.u2">Jeder Schnitt beginnt mit Zuhören – dein Haar, deine Geschichte</span></div>
+      <div class="reveal flex items-center gap-3"><div class="dot-gold"></div><span data-i18n="usps.u3">Ruhige, private Atmosphäre — nur auf Termin</span></div>
+    </div>
+  </section>
+
+  <!-- Services & Prices (accordion) -->
+  <section id="services" class="py-14 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="reveal mb-8">
+        <h2 class="font-serif text-3xl" data-i18n="services.title">Leistungen & Preise</h2>
+        <p class="text-white/70 mt-2" data-i18n="services.note">Transparente Richtwerte – inkl. Waschen, Styling & Kopfmassage. Endpreis abhängig von Länge & Fülle.</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Cuts -->
+        <details class="price-acc">
+          <summary>
+            <span><i data-lucide="scissors" class="w-4 h-4 mr-2"></i>Schnitte</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 acc-icon"></i>
+          </summary>
+          <ul>
+            <li><span>Damen Haarschnitt – <em>Leichtigkeit, die bleibt</em></span><span class="price">49,00 €</span></li>
+            <li><span>Damen Haarschnitt kurz</span><span class="price">39,00 €</span></li>
+            <li><span>Herren Haarschnitt</span><span class="price">22,00 €</span></li>
+            <li><span>Bart</span><span class="price">10,00 €</span></li>
+          </ul>
+        </details>
+
+        <!-- Styling -->
+        <details class="price-acc">
+          <summary>
+            <span><i data-lucide="wind" class="w-4 h-4 mr-2"></i>Föhnen / Stylen</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 acc-icon"></i>
+          </summary>
+        <ul>
+            <li><span>Bis Ohrlänge</span><span class="price">19,00 €</span></li>
+            <li><span>Bis Schlüsselbein</span><span class="price">23,00 €</span></li>
+            <li><span>Bis Brustmitte</span><span class="price">29,00 €</span></li>
+          </ul>
+        </details>
+
+        <!-- Care -->
+        <details class="price-acc">
+          <summary>
+            <span><i data-lucide="sparkles" class="w-4 h-4 mr-2"></i>Pflege / Kuren</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 acc-icon"></i>
+          </summary>
+          <ul>
+            <li><span>1-Phasen Kur</span><span class="price">10,00 €</span></li>
+            <li><span>2-Phasen Kur</span><span class="price">15,00 €</span></li>
+            <li><span>3-Phasen Kur</span><span class="price">20,00 €</span></li>
+          </ul>
+        </details>
+
+        <!-- Color -->
+        <details class="price-acc">
+          <summary>
+            <span><i data-lucide="droplets" class="w-4 h-4 mr-2"></i>Färben</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 acc-icon"></i>
+          </summary>
+          <ul>
+            <li><span>Ansatz</span><span class="price">ab 35,00 €</span></li>
+            <li><span>Längen & Spitzen</span><span class="price">ab 15,00 €</span></li>
+            <li><span>Glossing</span><span class="price">ab 25,00 €</span></li>
+          </ul>
+        </details>
+
+        <!-- Blond -->
+        <details class="price-acc">
+          <summary>
+            <span><i data-lucide="sun" class="w-4 h-4 mr-2"></i>Blondieren</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 acc-icon"></i>
+          </summary>
+          <ul>
+            <li><span>Ansatz</span><span class="price">ab 39,00 €</span></li>
+            <li><span>Längen & Spitzen</span><span class="price">ab 20,00 €</span></li>
+          </ul>
+        </details>
+
+        <!-- Highlights -->
+        <details class="price-acc">
+          <summary>
+            <span><i data-lucide="highlighter" class="w-4 h-4 mr-2"></i>Highlights</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 acc-icon"></i>
+          </summary>
+          <ul>
+            <li><span>Oberkopf</span><span class="price">ab 40,00 €</span></li>
+            <li><span>Komplett</span><span class="price">ab 55,00 €</span></li>
+            <li><span>Painting</span><span class="price">ab 65,00 €</span></li>
+            <li><span>Balayage – <em>sanfte Übergänge wie von der Sonne geküsst</em></span><span class="price">ab 110,00 €</span></li>
+          </ul>
+        </details>
+
+        <!-- Special -->
+        <details class="price-acc">
+          <summary>
+            <span><i data-lucide="stars" class="w-4 h-4 mr-2"></i>Special</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 acc-icon"></i>
+          </summary>
+          <ul>
+            <li><span>Exfoliation</span><span class="price">ab 30,00 €</span></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-14 sm:py-16 bg-panel border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="reveal flex items-end justify-between mb-6">
+        <h2 class="font-serif text-3xl" data-i18n="portfolio.title">Inspiration & Ergebnisse</h2>
+        <a href="https://www.instagram.com/hairmony_by_stacy" target="_blank" class="text-sm text-white/70 hover:text-white flex items-center" data-i18n="portfolio.ig">
+          <i data-lucide="instagram" class="w-4 h-4 mr-2"></i>Mehr auf Instagram
+        </a>
+      </div>
+      <div id="portfolioGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <a class="portfolio-item block group aspect-square rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="assets/img/portfolio/p1.jpg" alt="Portfolio 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        </a>
+        <a class="portfolio-item block group aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="assets/img/portfolio/p2.jpg" alt="Portfolio 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        </a>
+        <a class="portfolio-item block group aspect-square rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+          <img src="assets/img/portfolio/p3.jpg" alt="Portfolio 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products (ORGÆNIC) -->
+  <section id="products" class="py-14 sm:py-16 bg-panel border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="reveal flex items-end justify-between mb-6">
+        <h2 class="font-serif text-3xl" data-i18n="products.title">Produkte</h2>
+        <span class="text-sm text-white/60">ORGÆNIC Lifestyle</span>
+      </div>
+
+      <p class="reveal text-white/80 max-w-3xl" data-i18n="products.copy">
+        ORGÆNIC Lifestyle Produkte – entwickelt, um die natürliche Bewegung des Haares zu unterstützen. Spürbare Leichtigkeit, sichtbar gesundes Haar. Exklusiv im Salon erhältlich.
+      </p>
+
+      <!-- Auto-scroll wide image -->
+      <div class="reveal product-marquee mt-8" aria-label="ORGÆNIC Lifestyle Produktlinie">
+        <div class="marquee-track">
+          <img src="assets/img/orgaenic-products.jpg" alt="ORGÆNIC Lifestyle – Produktlinie" loading="lazy" height="360">
+          <img src="assets/img/orgaenic-products.jpg" alt="" aria-hidden="true" loading="lazy" height="360">
+        </div>
+      </div>
+
+      <div class="mt-6 text-sm text-white/60">
+        Tipp: Bewege die Maus über die Abbildung, um die Animation zu pausieren. Auf Mobilgeräten kannst du wischen.
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-14 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-8 items-start">
+      <div class="reveal md:col-span-3">
+        <h2 class="font-serif text-3xl mb-3" data-i18n="about.title">Philosophie</h2>
+        <p class="text-white/80 leading-relaxed" data-i18n="about.copy">
+          Für mich ist jedes Haar lebendig. Es atmet, bewegt sich, hat Charakter. ORGÆNIC Lifestyle bedeutet, diesem Charakter Raum zu geben. Ich sehe nicht nur das Haar, sondern den ganzen Menschen — mit Stil, Emotionen und Persönlichkeit. Wer ehrliches Handwerk und natürliche Schönheit sucht, ist hier richtig.
+        </p>
+      </div>
+      <div class="reveal md:col-span-2 card">
+        <h3 class="font-serif text-xl mb-4" data-i18n="about.facts_title">Salon-Infos</h3>
+        <ul class="space-y-3 text-white/80 text-sm">
+          <li><span class="text-white/50" data-i18n="facts.founded_label">Gründung</span>: 01/01/2023</li>
+          <li><span class="text-white/50" data-i18n="facts.training_label">Ausbildung</span>: <span data-i18n="facts.training_value">Abgeschlossen 2022</span></li>
+          <li><span class="text-white/50" data-i18n="facts.products_label">Produkte</span>: <span data-i18n="facts.products_value">ORGÆNIC Lifestyle – Pflege & Verkauf</span></li>
+          <li><span class="text-white/50" data-i18n="facts.hours_label">Öffnungszeiten</span>: <span data-i18n="facts.hours_value">Nur nach Termin</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking (Termin) -->
+  <section id="book" class="py-14 sm:py-16 bg-panel border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div class="reveal">
+        <h2 class="font-serif text-3xl" data-i18n="book.title">Termin anfragen</h2>
+        <p class="text-white/80 mt-2" data-i18n="book.copy">
+          Dein Termin ist ein Erlebnis – ruhig, privat, nur für dich. Wähle ein Datum und sende deine Anfrage. Ich melde mich persönlich zur Bestätigung.
+        </p>
+
+        <!-- Kalender -->
+        <div class="mt-6 calendar card">
+          <div class="cal-header">
+            <button class="cal-nav" id="calPrev" aria-label="Voriger Monat">‹</button>
+            <div class="cal-title"><i data-lucide="calendar" class="w-4 h-4 mr-2"></i><span id="calMonthLabel">Monat Jahr</span></div>
+            <button class="cal-nav" id="calNext" aria-label="Nächster Monat">›</button>
+          </div>
+          <div class="cal-grid cal-weekdays">
+            <div>Mo</div><div>Di</div><div>Mi</div><div>Do</div><div>Fr</div><div>Sa</div><div>So</div>
+          </div>
+          <div class="cal-grid" id="calDays"></div>
+        </div>
+      </div>
+
+      <!-- Aanvraag formulier -->
+      <div class="reveal">
+        <div class="card">
+          <h3 class="font-serif text-xl mb-3">Deine Angaben</h3>
+          <p class="text-sm text-white/70 mb-4">
+            <span class="text-white/60">Gewähltes Datum:</span>
+            <span id="chosenDate" class="font-medium text-white">-</span>
+          </p>
+
+          <form id="reqForm" class="space-y-4">
+            <input type="hidden" id="dateISO" name="dateISO" />
+            <div>
+              <label class="block text-xs text-white/60 mb-1" data-i18n="form.name">Name</label>
+              <input required type="text" id="fName" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3" placeholder="Vor- und Nachname" />
+            </div>
+            <div>
+              <label class="block text-xs text-white/60 mb-1" data-i18n="form.service">Leistung</label>
+              <input required type="text" id="fService" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3" placeholder="z. B. Damen Schnitt, Balayage" />
+            </div>
+            <div>
+              <label class="block text-xs text-white/60 mb-1" data-i18n="form.preferred">Wunschzeit</label>
+              <input required type="text" id="fTime" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3" placeholder="z. B. Fr 14:00" />
+            </div>
+
+            <button id="waSend" class="w-full rounded-xl px-5 py-3 bg-gold text-coal font-medium flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Anfrage über WhatsApp senden</span>
+            </button>
+
+            <p class="text-xs text-white/60" data-i18n="book.policy">
+              Hinweis: Dies ist eine Anfrage, keine automatische Bestätigung.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="py-14 sm:py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="reveal font-serif text-3xl mb-6" data-i18n="reviews.title">Stimmen</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <article class="reveal card">
+          <p class="text-white/80" data-i18n="reviews.r1">„Noch nie hat mein Haar so leicht und frei gewirkt. Der Schnitt sitzt – auch Wochen später. Es fühlt sich an, als ob mein Haar wirklich atmet.“</p>
+          <div class="mt-3 text-xs text-white/50">— Julia</div>
+        </article>
+        <article class="reveal card">
+          <p class="text-white/80" data-i18n="reviews.r2">„Balayage mit einem Verlauf, so sanft, dass es aussieht, als wäre es von der Sonne geküsst.“</p>
+          <div class="mt-3 text-xs text-white/50">— Lara</div>
+        </article>
+        <article class="reveal card">
+          <p class="text-white/80" data-i18n="reviews.r3">„Privater Termin, keine Hektik. Man spürt echtes Handwerk.“</p>
+          <div class="mt-3 text-xs text-white/50">— Anne</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Legal -->
+  <section id="contact" class="py-14 sm:py-16 bg-panel border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 items-start">
+      <div class="reveal md:col-span-2">
+        <h2 class="font-serif text-3xl" data-i18n="contact.title">Kontakt & Anfahrt</h2>
+        <p class="text-white/80 mt-2" data-i18n="contact.copy">Ostbelgien · Termine nach Vereinbarung</p>
+        <div class="mt-4 space-y-2 text-white/80">
+          <a href="tel:+32479530471" class="flex items-center hover:text-white">
+            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>+32 479 53 04 71
+          </a>
+          <a href="https://www.instagram.com/hairmony_by_stacy" target="_blank" class="flex items-center hover:text-white">
+            <i data-lucide="instagram" class="w-4 h-4 mr-2"></i>@hairmony_by_stacy
+          </a>
+          <a href="https://wa.me/32479530471" target="_blank" class="flex items-center hover:text-white">
+            <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="reveal card">
+        <h3 class="font-serif text-xl mb-3" data-i18n="legal.title">Rechtliches</h3>
+        <ul class="text-sm text-white/80 space-y-2">
+          <li><a href="legal/imprint.html" class="hover:text-white" data-i18n="legal.imprint">Impressum / Unternehmensangaben</a></li>
+          <li><a href="legal/privacy.html" class="hover:text-white" data-i18n="legal.privacy">Datenschutzerklärung (DSGVO)</a></li>
+          <li><a href="legal/cookies.html" class="hover:text-white" data-i18n="legal.cookies">Cookie-Richtlinie (EU)</a></li>
+          <li><a href="legal/terms.html" class="hover:text-white" data-i18n="legal.terms">Allgemeine Geschäftsbedingungen (AGB)</a></li>
+        </ul>
+        <p class="text-[11px] text-white/50 mt-3" data-i18n="legal.note">Hinweis: Inhalte als Vorlage, keine Rechtsberatung. Anpassung für die Deutschsprachige Gemeinschaft Belgiens vorgesehen.</p>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 pt-10 pb-14 text-[12px] text-white/50">© <span id="year"></span> Hairmony by Stacy</div>
+  </section>
+
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta sm:hidden">
+    <a href="#book" class="bg-gold text-coal font-medium" data-i18n="nav.book">Anfragen</a>
+    <a href="https://wa.me/32479530471" target="_blank" class="bg-white/10 border border-white/10">WhatsApp</a>
+  </div>
+
+  <!-- GSAP + site scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/gsap-init.js"></script>
+  <script src="assets/js/booking.js"></script>
+
+  <!-- i18n data (verbeterde copy) + basic switch -->
+  <script>
+    const data = {
+      de: {
+        nav: { services: 'Leistungen', portfolio: 'Inspiration', about: 'Philosophie', reviews: 'Stimmen', contact: 'Kontakt', book: 'Anfragen' },
+        hero: { title: 'Haar, das atmet, fällt und strahlt.', subtitle: 'Dein persönlicher ORGÆNIC Lifestyle Termin – Ruhe, Schönheit und Handwerk in perfekter Harmonie.', cta_primary: 'Unverbindlich anfragen', cta_secondary: 'WhatsApp' },
+        facts: { founded_label: 'Gründung', training_label: 'Ausbildung', training_value: 'Abgeschlossen 2022', products_label: 'Produkte', products_value: 'ORGÆNIC Lifestyle – Pflege & Verkauf', hours_label: 'Öffnungszeiten', hours_value: 'Nur nach Termin' },
+        usps: { u1: 'Spezialisiert auf ORGÆNIC Lifestyle', u2: 'Jeder Schnitt beginnt mit Zuhören – dein Haar, deine Geschichte', u3: 'Ruhige, private Atmosphäre — nur auf Termin' },
+        services: { title: 'Leistungen & Preise', note: 'Transparente Richtwerte – inkl. Waschen, Styling & Kopfmassage. Endpreis abhängig von Länge & Fülle.' },
+        portfolio: { title: 'Inspiration & Ergebnisse', ig: 'Mehr auf Instagram' },
+        about: { title: 'Philosophie', copy: 'Für mich ist jedes Haar lebendig. Es atmet, bewegt sich, hat Charakter. ORGÆNIC Lifestyle bedeutet, diesem Charakter Raum zu geben. Ich sehe nicht nur das Haar, sondern den ganzen Menschen — mit Stil, Emotionen und Persönlichkeit. Wer ehrliches Handwerk und natürliche Schönheit sucht, ist hier richtig.', facts_title: 'Salon-Infos' },
+        book: { title: 'Termin anfragen', copy: 'Dein Termin ist ein Erlebnis – ruhig, privat, nur für dich. Wähle ein Datum und sende deine Anfrage. Ich melde mich persönlich zur Bestätigung.', call: 'Anrufen', whatsapp: 'WhatsApp', policy: 'Hinweis: Dies ist eine Anfrage, keine automatische Bestätigung.' },
+        reviews: { title: 'Stimmen', r1: '„Noch nie hat mein Haar so leicht und frei gewirkt. Der Schnitt sitzt – auch Wochen später. Es fühlt sich an, als ob mein Haar wirklich atmet.“', r2: '„Balayage mit einem Verlauf, so sanft, dass es aussieht, als wäre es von der Sonne geküsst.“', r3: '„Privater Termin, keine Hektik. Man spürt echtes Handwerk.“' },
+        products: { title: 'Produkte', copy: 'ORGÆNIC Lifestyle Produkte – entwickelt, um die natürliche Bewegung des Haares zu unterstützen. Spürbare Leichtigkeit, sichtbar gesundes Haar. Exklusiv im Salon erhältlich.' },
+        contact: { title: 'Kontakt & Anfahrt', copy: 'Ostbelgien · Termine nach Vereinbarung' },
+        legal: { title: 'Rechtliches', imprint: 'Impressum / Unternehmensangaben', privacy: 'Datenschutzerklärung (DSGVO)', cookies: 'Cookie-Richtlinie (EU)', terms: 'Allgemeine Geschäftsbedingungen (AGB)', note: 'Hinweis: Inhalte als Vorlage, keine Rechtsberatung. Anpassung für die Deutschsprachige Gemeinschaft Belgiens vorgesehen.' }
+      },
+      nl: {
+        nav: { services: 'Diensten', portfolio: 'Inspiratie', about: 'Filosofie', reviews: 'Reviews', contact: 'Contact', book: 'Aanvragen' },
+        hero: { title: 'Haar dat ademt, valt en straalt.', subtitle: 'Jouw persoonlijke ORGÆNIC Lifestyle afspraak – rust, schoonheid en vakmanschap in perfecte harmonie.', cta_primary: 'Vrijblijvend aanvragen', cta_secondary: 'WhatsApp' },
+        facts: { founded_label: 'Opgericht', training_label: 'Opleiding', training_value: 'Afgerond in 2022', products_label: 'Producten', products_value: 'ORGÆNIC Lifestyle – verzorging & verkoop', hours_label: 'Openingstijden', hours_value: 'Op afspraak' },
+        usps: { u1: 'Gespecialiseerd in ORGÆNIC Lifestyle', u2: 'Elke coupe begint met luisteren – jouw haar, jouw verhaal', u3: 'Rustige, private sfeer — alleen op afspraak' },
+        services: { title: 'Diensten & Prijzen', note: 'Transparante richtprijzen – inclusief wassen, styling & hoofdmassage. Eindprijs afhankelijk van lengte & dichtheid.' },
+        portfolio: { title: 'Inspiratie & Resultaten', ig: 'Meer op Instagram' },
+        about: { title: 'Filosofie', copy: 'Voor mij is elk haar levend. Het ademt, beweegt en heeft karakter. ORGÆNIC Lifestyle betekent dat karakter ruimte geven. Ik zie niet alleen het haar, maar de hele persoon — met stijl, emoties en persoonlijkheid. Wie eerlijk vakmanschap en natuurlijke schoonheid zoekt, is hier op de juiste plek.', facts_title: 'Saloninfo' },
+        book: { title: 'Afspraak aanvragen', copy: 'Jouw afspraak is een beleving – rustig, privé, alleen voor jou. Kies een datum en verstuur je aanvraag. Ik bevestig persoonlijk.', call: 'Bellen', whatsapp: 'WhatsApp', policy: 'Let op: dit is een aanvraag, geen automatische bevestiging.' },
+        reviews: { title: 'Reviews', r1: '“Nog nooit voelde mijn haar zo licht en vrij. De coupe blijft wekenlang perfect zitten. Het lijkt alsof mijn haar echt ademt.”', r2: '“Balayage met een verloop zo zacht dat het lijkt alsof de zon het heeft gekust.”', r3: '“Privé afspraak, zonder haast. Je voelt echt vakmanschap.”' },
+        products: { title: 'Producten', copy: 'ORGÆNIC Lifestyle producten – ontwikkeld om de natuurlijke beweging van het haar te ondersteunen. Voelbare lichtheid, zichtbaar gezond haar. Exclusief verkrijgbaar in de salon.' },
+        contact: { title: 'Contact & Route', copy: 'Oost-België · op afspraak' },
+        legal: { title: 'Juridisch', imprint: 'Impressum / bedrijfsgegevens', privacy: 'Privacyverklaring (AVG)', cookies: 'Cookiebeleid (EU)', terms: 'Algemene Voorwaarden', note: 'Let op: inhoud als sjabloon, geen juridisch advies. Afgestemd op Duitstalig België.' }
+      },
+      fr: {
+        nav: { services: 'Services', portfolio: 'Inspiration', about: 'Philosophie', reviews: 'Avis', contact: 'Contact', book: 'Demande' },
+        hero: { title: 'Des cheveux qui respirent, tombent et rayonnent.', subtitle: 'Votre rendez-vous ORGÆNIC Lifestyle – calme, beauté et savoir-faire en parfaite harmonie.', cta_primary: 'Demander sans engagement', cta_secondary: 'WhatsApp' },
+        facts: { founded_label: 'Fondation', training_label: 'Formation', training_value: 'Terminée en 2022', products_label: 'Produits', products_value: 'ORGÆNIC Lifestyle – soin & vente', hours_label: 'Heures', hours_value: 'Uniquement sur rendez-vous' },
+        usps: { u1: 'Spécialisée ORGÆNIC Lifestyle', u2: 'Chaque coupe commence par l’écoute – vos cheveux, votre histoire', u3: 'Cadre calme et privé — uniquement sur rendez-vous' },
+        services: { title: 'Services & Tarifs', note: 'Tarifs transparents – incluant shampooing, coiffage & massage. Prix final selon longueur & densité.' },
+        portfolio: { title: 'Inspiration & Résultats', ig: 'Plus sur Instagram' },
+        about: { title: 'Philosophie', copy: 'Pour moi, chaque cheveu est vivant. Il respire, bouge et a un caractère. ORGÆNIC Lifestyle signifie donner de l’espace à ce caractère. Je vois non seulement les cheveux, mais la personne entière — style, émotions et personnalité. Si vous cherchez un savoir-faire authentique et une beauté naturelle, vous êtes au bon endroit.', facts_title: 'Infos salon' },
+        book: { title: 'Demander un rendez-vous', copy: 'Votre rendez-vous est une expérience – calme, privée, rien que pour vous. Choisissez une date et envoyez votre demande. Je confirme personnellement.', call: 'Appeler', whatsapp: 'WhatsApp', policy: 'Note: ceci est une demande, pas une confirmation automatique.' },
+        reviews: { title: 'Avis', r1: '« Mes cheveux n’ont jamais été aussi légers et libres. La coupe reste parfaite pendant des semaines. C’est comme si mes cheveux respiraient. »', r2: '« Balayage avec un dégradé si doux qu’on dirait un baiser du soleil. »', r3: '« Rendez-vous privé, sans stress. On ressent le vrai savoir-faire. »' },
+        products: { title: 'Produits', copy: 'Produits ORGÆNIC Lifestyle – conçus pour accompagner le mouvement naturel des cheveux. Légèreté palpable, santé visible. Disponibles exclusivement au salon.' },
+        contact: { title: 'Contact & Accès', copy: 'Belgique de l’Est · sur rendez-vous' },
+        legal: { title: 'Mentions légales', imprint: 'Mentions / données d’entreprise', privacy: 'Politique de confidentialité (RGPD)', cookies: 'Politique des cookies (UE)', terms: 'Conditions générales', note: 'Modèle — pas de conseil juridique. Adapté à la communauté germanophone de Belgique.' }
+      },
+      en: {
+        nav: { services: 'Services', portfolio: 'Inspiration', about: 'Philosophy', reviews: 'Reviews', contact: 'Contact', book: 'Request' },
+        hero: { title: 'Hair that breathes, falls and shines.', subtitle: 'Your personal ORGÆNIC Lifestyle appointment – calm, beauty and honest craft in perfect harmony.', cta_primary: 'Request appointment', cta_secondary: 'WhatsApp' },
+        facts: { founded_label: 'Founded', training_label: 'Training', training_value: 'Completed in 2022', products_label: 'Products', products_value: 'ORGÆNIC Lifestyle – care & retail', hours_label: 'Hours', hours_value: 'By appointment only' },
+        usps: { u1: 'Specialised in ORGÆNIC Lifestyle', u2: 'Every cut begins with listening – your hair, your story', u3: 'Calm, private setting — by appointment' },
+        services: { title: 'Services & Prices', note: 'Transparent guidelines – including wash, styling & massage. Final price depends on length and density.' },
+        portfolio: { title: 'Inspiration & Results', ig: 'More on Instagram' },
+        about: { title: 'Philosophy', copy: 'To me, every hair is alive. It breathes, moves, has character. ORGÆNIC Lifestyle means giving that character space. I don’t just see the hair, I see the whole person — style, emotions and personality. If you seek honest craft and natural beauty, you are in the right place.', facts_title: 'Salon info' },
+        book: { title: 'Request appointment', copy: 'Your appointment is an experience – calm, private, just for you. Choose a date and send your request. I will confirm personally.', call: 'Call', whatsapp: 'WhatsApp', policy: 'Note: this is a request, not an automatic confirmation.' },
+        reviews: { title: 'Reviews', r1: '“My hair has never felt so light and free. The cut lasts for weeks. It feels as if my hair is truly breathing.”', r2: '“Balayage with a gradient so soft, it looks like it was kissed by the sun.”', r3: '“Private appointment, no rush. You can feel the craft.”' },
+        products: { title: 'Products', copy: 'ORGÆNIC Lifestyle products – designed to support the natural movement of hair. Tangible lightness, visible health. Exclusively available in the salon.' },
+        contact: { title: 'Contact & Directions', copy: 'East Belgium · by appointment' },
+        legal: { title: 'Legal', imprint: 'Imprint / company details', privacy: 'Privacy policy (GDPR)', cookies: 'Cookie policy (EU)', terms: 'Terms & Conditions', note: 'Template only — not legal advice. Tailored to the German-speaking Community of Belgium.' }
+      }
+    };
+
+    function setTexts(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const path = el.getAttribute('data-i18n').split('.');
+        const val = path.reduce((acc, k) => acc && acc[k], data[lang]);
+        if (typeof val === 'string') el.textContent = val;
+      });
+    }
+    const switcher = document.getElementById('langSwitch');
+    function initLang() {
+      const stored = localStorage.getItem('hm_lang') || 'de';
+      switcher.value = stored; setTexts(stored);
+    }
+    switcher.addEventListener('change', () => {
+      const lang = switcher.value; localStorage.setItem('hm_lang', lang); setTexts(lang);
+      if (window.lucide) window.lucide.createIcons();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+      initLang();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
