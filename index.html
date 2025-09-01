@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
 <head>
+    <link rel="icon" href="assets/favicon/hairmony-h.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon/hairmony-h-180.png">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hairmony by Stacy — ORGÆNIC Lifestyle</title>
@@ -74,48 +77,55 @@
   </header>
 
   <!-- Hero -->
-  <section id="home" class="relative pt-28 pb-20 sm:pb-28 overflow-hidden">
-    <!-- Background image -->
-    <div class="absolute inset-0">
-      <img src="assets/img/hero-desktop.jpg" alt="Hero Background" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-black/60"></div> <!-- leesbaarheids-overlay -->
+<section id="home" class="relative pt-28 pb-20 sm:pb-28 overflow-hidden min-h-[70vh]">
+  <!-- Responsive background image -->
+  <div class="absolute inset-0">
+    <picture>
+      <!-- Mobiel (verticale afbeelding) -->
+      <source media="(max-width: 640px)" srcset="assets/img/bg-vert.jpg">
+      <!-- Desktop / tablet -->
+      <img src="assets/img/hero-desktop.jpg" alt="Hero Background" class="w-full h-full object-cover object-center">
+    </picture>
+    <!-- Leesbaarheid overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+    <!-- Text -->
+    <div class="max-w-xl">
+      <h1 class="reveal font-serif text-4xl sm:text-5xl leading-tight">
+        <span class="bg-gradient-to-r from-gold2 to-gold bg-clip-text text-transparent" data-i18n="hero.title">
+          Haar, das atmet, fällt und strahlt.
+        </span>
+      </h1>
+      <p class="reveal mt-4 text-white/80" data-i18n="hero.subtitle">
+        Dein persönlicher ORGÆNIC Lifestyle Termin – Ruhe, Schönheit und Handwerk in perfekter Harmonie.
+      </p>
+      <div class="reveal mt-6 flex items-center gap-3">
+        <a href="#book" class="cta-btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-gold text-coal font-medium hover:brightness-110 transition" data-i18n="hero.cta_primary">Unverbindlich anfragen</a>
+        <a href="https://wa.me/32479530471" target="_blank" class="inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white/5 border border-white/10 hover:bg-white/10" data-i18n="hero.cta_secondary">
+          <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>WhatsApp
+        </a>
+      </div>
+      <dl class="reveal mt-8 grid grid-cols-2 gap-4 text-xs text-white/70">
+        <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.founded_label">Gründung</dt><dd>01/01/2023</dd></div>
+        <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.training_label">Ausbildung</dt><dd data-i18n="facts.training_value">Abgeschlossen 2022</dd></div>
+        <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.products_label">Produkte</dt><dd data-i18n="facts.products_value">ORGÆNIC Lifestyle – Pflege & Verkauf</dd></div>
+        <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.hours_label">Öffnungszeiten</dt><dd data-i18n="facts.hours_value">Nur nach Termin</dd></div>
+      </dl>
     </div>
 
-    <!-- Content -->
-    <div class="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
-      <!-- Text -->
-      <div class="max-w-xl">
-        <h1 class="reveal font-serif text-4xl sm:text-5xl leading-tight">
-          <span class="bg-gradient-to-r from-gold2 to-gold bg-clip-text text-transparent" data-i18n="hero.title">
-            Haar, das atmet, fällt und strahlt.
-          </span>
-        </h1>
-        <p class="reveal mt-4 text-white/80" data-i18n="hero.subtitle">
-          Dein persönlicher ORGÆNIC Lifestyle Termin – Ruhe, Schönheit und Handwerk in perfekter Harmonie.
-        </p>
-        <div class="reveal mt-6 flex items-center gap-3">
-          <a href="#book" class="cta-btn inline-flex items-center justify-center rounded-xl px-5 py-3 bg-gold text-coal font-medium hover:brightness-110 transition" data-i18n="hero.cta_primary">Unverbindlich anfragen</a>
-          <a href="https://wa.me/32479530471" target="_blank" class="inline-flex items-center justify-center rounded-xl px-5 py-3 bg-white/5 border border-white/10 hover:bg-white/10" data-i18n="hero.cta_secondary">
-            <i data-lucide="message-circle" class="w-4 h-4 mr-2"></i>WhatsApp
-          </a>
-        </div>
-        <dl class="reveal mt-8 grid grid-cols-2 gap-4 text-xs text-white/70">
-          <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.founded_label">Gründung</dt><dd>01/01/2023</dd></div>
-          <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.training_label">Ausbildung</dt><dd data-i18n="facts.training_value">Abgeschlossen 2022</dd></div>
-          <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.products_label">Produkte</dt><dd data-i18n="facts.products_value">ORGÆNIC Lifestyle – Pflege & Verkauf</dd></div>
-          <div><dt class="uppercase tracking-widest text-[10px] text-white/50" data-i18n="facts.hours_label">Öffnungszeiten</dt><dd data-i18n="facts.hours_value">Nur nach Termin</dd></div>
-        </dl>
-      </div>
-
-      <!-- Portrait -->
-      <div class="reveal relative md:justify-self-end">
-        <div class="portrait-wrap relative w-[85vw] max-w-[520px] mx-auto md:mx-0">
-          <img src="assets/img/stacy-portrait.png" alt="Stacy — Hairmony" class="portrait-img w-full h-auto will-change-transform" loading="eager">
-          <div class="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/10 shadow-[0_30px_80px_rgba(200,169,106,.20)]"></div>
-        </div>
+    <!-- Portrait -->
+    <div class="reveal relative md:justify-self-end">
+      <div class="portrait-wrap relative w-[85vw] max-w-[520px] mx-auto md:mx-0">
+        <img src="assets/img/stacy-portrait.png" alt="Stacy — Hairmony" class="portrait-img w-full h-auto will-change-transform" loading="eager">
+        <div class="pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/10 shadow-[0_30px_80px_rgba(200,169,106,.20)]"></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- USP band -->
   <section class="bg-panel border-y border-white/5">

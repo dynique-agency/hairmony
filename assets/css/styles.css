@@ -201,3 +201,21 @@ body {
   .product-marquee{ overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
   .product-marquee .marquee-track{ animation: none; gap: 24px; padding: 12px; }
 }
+
+@media (max-width: 640px){
+  #home { min-height: 78vh; }
+}
+
+/* Algemene achtergrond voor de hele site */
+body {
+  background: url('../img/bg.jpg') no-repeat center top fixed;
+  background-size: cover;
+}
+
+/* Op mobiel: vervang achtergrond door verticale versie */
+@media (max-width: 640px) {
+  body {
+    background: url('../img/bg-site-vert.jpg') no-repeat center top fixed;
+    background-size: cover;
+  }
+}
