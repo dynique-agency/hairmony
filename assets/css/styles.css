@@ -212,10 +212,5 @@ body {
   background-size: cover;
 }
 
-/* Op mobiel: vervang achtergrond door verticale versie */
-@media (max-width: 640px) {
-  body {
-    background: url('../img/bg-site-vert.jpg') no-repeat center top fixed;
-    background-size: cover;
-  }
+
 }
