@@ -1,0 +1,5 @@
+# Robots.txt voor Hairmony by Stacy
+User-agent: *
+Allow: /
+
+Sitemap: https://hairmony-by-stacy.be/sitemap.xml
